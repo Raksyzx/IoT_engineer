@@ -1,0 +1,13 @@
+// Generator suhu 25-35°C dan kelembapan 60-85%
+let suhu = (Math.random() * 10 + 25).toFixed(1);
+let kelembapan = (Math.random() * 25 + 60).toFixed(1);
+
+msg.payload = {
+    temperature: parseFloat(suhu),
+    humidity: parseFloat(kelembapan),
+    sensor_id: "NodeRED_Generator"
+};
+// Kirim juga ke debug
+node.warn("Suhu: " + suhu + "°C, Kelembapan: " + kelembapan + "%");
+
+return msg;
